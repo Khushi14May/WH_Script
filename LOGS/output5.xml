@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.9.0 on win32)" generated="20231121 15:42:15.223" rpa="false" schemaversion="4">
+<suite id="s1" name="Verify Result Page" source="C:\Users\158421\OneDrive - Arrow Electronics, Inc\Desktop\GTU-result-Robot\Automation_GTUResult\GTUCrawler\verify_result_page.robot">
+<kw name="Open The Browser" library="GTUResult_common_keywords" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${gtu_url}</arg>
+<arg>${gtu_launch}</arg>
+<arg>remote_url=${REMOTE_URL}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20231121 15:42:15.550" level="INFO">Opening browser 'Chrome' to base url 'https://www.gturesults.in/Default.aspx?ext=archive' through remote server at 'http://10.126.68.81:5555/wd/hub'.</msg>
+<msg timestamp="20231121 15:42:17.601" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000221AD9FE0A0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /wd/hub/session</msg>
+<msg timestamp="20231121 15:42:19.646" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000221AD9FE430&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /wd/hub/session</msg>
+<msg timestamp="20231121 15:42:21.695" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000221AD9FED90&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /wd/hub/session</msg>
+<msg timestamp="20231121 15:42:23.742" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20231121 15:42:23.742" level="FAIL">MaxRetryError: HTTPConnectionPool(host='10.126.68.81', port=5555): Max retries exceeded with url: /wd/hub/session (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000221AD9FEFA0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</msg>
+<status status="FAIL" starttime="20231121 15:42:15.549" endtime="20231121 15:42:23.920"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20231121 15:42:23.920" endtime="20231121 15:42:23.920"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${GtuLogo}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" starttime="20231121 15:42:23.920" endtime="20231121 15:42:23.920"/>
+</kw>
+<status status="FAIL" starttime="20231121 15:42:15.549" endtime="20231121 15:42:23.920"/>
+</kw>
+<test id="s1-t1" name="Fetching All Results Of Students" line="8">
+<status status="FAIL" starttime="20231121 15:42:23.920" endtime="20231121 15:42:23.920">Parent suite setup failed:
+MaxRetryError: HTTPConnectionPool(host='10.126.68.81', port=5555): Max retries exceeded with url: /wd/hub/session (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000221AD9FEFA0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</status>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20231121 15:42:23.921" endtime="20231121 15:42:23.921"/>
+</kw>
+<status status="FAIL" starttime="20231121 15:42:15.228" endtime="20231121 15:42:23.921">Suite setup failed:
+MaxRetryError: HTTPConnectionPool(host='10.126.68.81', port=5555): Max retries exceeded with url: /wd/hub/session (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000221AD9FEFA0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</status>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+  <stat pass="0" fail="1">E2E-82</stat>
+	<stat pass="0" fail="1">E2E-241</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Verify Result Page">Verify Result Page</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20231121 15:42:15.515" level="ERROR">Error in file 'C:\Users\158421\OneDrive - Arrow Electronics, Inc\Desktop\GTU-result-Robot\Automation_GTUResult\Common\GTUResult_resources.robot' on line 5: Importing library 'C:\Users\158421\OneDrive - Arrow Electronics, Inc\Desktop\GTU-result-Robot\Automation_GTUResult\Common\ExtendedLibraray.py' failed: ModuleNotFoundError: No module named 'openpyxl'
+Traceback (most recent call last):
+  File "C:\Users\158421\OneDrive - Arrow Electronics, Inc\Desktop\GTU-result-Robot\Automation_GTUResult\Common\ExtendedLibraray.py", line 1, in &lt;module&gt;
+    import openpyxl
+PYTHONPATH:
+  C:\Users\158421\OneDrive - Arrow Electronics, Inc\Desktop\GTU-result-Robot\Automation_GTUResult\Common
+  C:\Users\158421\OneDrive - Arrow Electronics, Inc\Desktop\GTU-result-Robot\Automation_GTUResult
+  C:\Users\158421\AppData\Roaming\Python\Python39\Scripts\python39.zip
+  C:\Program Files\Python39\Lib
+  C:\Program Files\Python39\DLLs
+  C:\Users\158421\AppData\Roaming\Python\Python39\Scripts
+  C:\Program Files\Python39
+  C:\Program Files\Python39\lib\site-packages</msg>
+<msg timestamp="20231121 15:42:15.521" level="ERROR">Error in file 'C:\Users\158421\OneDrive - Arrow Electronics, Inc\Desktop\GTU-result-Robot\Automation_GTUResult\Common\GTUResult_resources.robot' on line 7: Library setting requires value.</msg>
+<msg timestamp="20231121 15:42:17.601" level="WARN">Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000221AD9FE0A0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /wd/hub/session</msg>
+<msg timestamp="20231121 15:42:19.646" level="WARN">Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000221AD9FE430&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /wd/hub/session</msg>
+<msg timestamp="20231121 15:42:21.695" level="WARN">Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000221AD9FED90&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /wd/hub/session</msg>
+</errors>
+</robot>

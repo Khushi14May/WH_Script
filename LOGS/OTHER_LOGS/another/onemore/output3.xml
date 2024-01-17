@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.9.0 on win32)" generated="20231201 16:05:36.092" rpa="false" schemaversion="4">
+<suite id="s1" name="Automation GTUResult" source="C:\Users\158421\OneDrive - Arrow Electronics, Inc\Desktop\GTU-result-Robot\Automation_GTUResult">
+<suite id="s1-s1" name="GTUCrawler" source="C:\Users\158421\OneDrive - Arrow Electronics, Inc\Desktop\GTU-result-Robot\Automation_GTUResult\GTUCrawler">
+<suite id="s1-s1-s1" name="Check" source="C:\Users\158421\OneDrive - Arrow Electronics, Inc\Desktop\GTU-result-Robot\Automation_GTUResult\GTUCrawler\check.robot">
+<test id="s1-s1-s1-t1" name="Example Test" line="9">
+<kw name="Log" library="BuiltIn">
+<arg>${url}<arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231201 16:05:36.310" level="INFO">https://www.amaxon.com/123/scan?status=5</msg>
+<status status="PASS" starttime="20231201 16:05:36.310" endtime="20231201 16:05:36.310"/>
+</kw>
+<kw name="Split String" library="String">
+<var>${prefix}</var>
+<arg>${url}</arg>
+<arg>/scan</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<msg timestamp="20231201 16:05:36.312" level="INFO">${prefix} = ['https://www.amaxon.com/123', '?status=5']</msg>
+<status status="PASS" starttime="20231201 16:05:36.311" endtime="20231201 16:05:36.312"/>
+</kw>
+<kw name="Split String" library="String">
+<var>${suffix}</var>
+<arg>${prefix}[0]</arg>
+<arg>.com/</arg>
+<doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
+<msg timestamp="20231201 16:05:36.313" level="INFO">${suffix} = ['https://www.amaxon', '123']</msg>
+<status status="PASS" starttime="20231201 16:05:36.313" endtime="20231201 16:05:36.313"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${numeric_part}</var>
+<arg>${suffix[1]}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20231201 16:05:36.314" level="INFO">${numeric_part} = 123</msg>
+<status status="PASS" starttime="20231201 16:05:36.313" endtime="20231201 16:05:36.314"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${numeric_part}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20231201 16:05:36.315" level="INFO">123</msg>
+<status status="PASS" starttime="20231201 16:05:36.315" endtime="20231201 16:05:36.316"/>
+</kw>
+<status status="PASS" starttime="20231201 16:05:36.309" endtime="20231201 16:05:36.316"/>
+</test>
+<status status="PASS" starttime="20231201 16:05:36.129" endtime="20231201 16:05:36.318"/>
+</suite>
+<status status="PASS" starttime="20231201 16:05:36.123" endtime="20231201 16:05:36.321"/>
+</suite>
+<status status="PASS" starttime="20231201 16:05:36.097" endtime="20231201 16:05:36.323"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+	<stat pass="0" fail="1">non-critical</stat>
+	<stat pass="0" fail="1">E2E-239</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Automation GTUResult">Automation GTUResult</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="GTUCrawler">Automation GTUResult.GTUCrawler</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Check">Automation GTUResult.GTUCrawler.Check</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

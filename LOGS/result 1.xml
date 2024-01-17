@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.9.0 on win32)" generated="20240103 11:27:54.962" rpa="false" schemaversion="4">
+<suite id="s1" name="TC 001" source="C:\Users\158386\pythonProject2\RobotFramework\TestCases\TC_001.robot">
+<test id="s1-t1" name="TC_001 Browser Start and Close" line="10">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${URL}</arg>
+<arg>${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240103 11:27:55.232" level="INFO">Opening browser 'Chrome' to base url 'https://thetestingworld.com/testings/'.</msg>
+<status status="PASS" starttime="20240103 11:27:55.232" endtime="20240103 11:27:59.178"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240103 11:27:59.178" endtime="20240103 11:27:59.315"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>name:fld_username</arg>
+<arg>Jyoti</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240103 11:27:59.317" level="INFO">Typing text 'Jyoti' into text field 'name:fld_username'.</msg>
+<status status="PASS" starttime="20240103 11:27:59.316" endtime="20240103 11:27:59.425"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>xpath://input[@name='fld_email']</arg>
+<arg>Jyoti@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240103 11:27:59.427" level="INFO">Typing text 'Jyoti@gmail.com' into text field 'xpath://input[@name='fld_email']'.</msg>
+<status status="PASS" starttime="20240103 11:27:59.426" endtime="20240103 11:27:59.517"/>
+</kw>
+<status status="PASS" starttime="20240103 11:27:55.231" endtime="20240103 11:27:59.517"/>
+</test>
+<status status="PASS" starttime="20240103 11:27:54.964" endtime="20240103 11:27:59.518"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="TC 001">TC 001</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

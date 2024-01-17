@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.9.0 on win32)" generated="20240101 12:25:24.659" rpa="false" schemaversion="4">
+<suite id="s1" name="Yog" source="C:\Users\158421\OneDrive - Arrow Electronics, Inc\Desktop\backup\ROBOT\Guj State Yog Board\yog.robot">
+<test id="s1-t1" name="Capture certificate" line="16">
+<kw name="Open Browser" library="Selenium2Library">
+<arg>url=${Url}</arg>
+<arg>browser=${Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20240101 12:25:25.051" level="INFO">Opening browser 'Chrome' to base url 'https://snc.gsyb.in/download-certificate'.</msg>
+<status status="PASS" starttime="20240101 12:25:25.050" endtime="20240101 12:25:29.583"/>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20240101 12:25:29.584" endtime="20240101 12:25:29.769"/>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<arg>value=5</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20240101 12:25:29.770" endtime="20240101 12:25:29.770"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${NameList}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20240101 12:25:29.772" level="INFO">${NameList} = {}</msg>
+<status status="PASS" starttime="20240101 12:25:29.772" endtime="20240101 12:25:29.773"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${NameList2}</var>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20240101 12:25:29.774" level="INFO">${NameList2} = {}</msg>
+<status status="PASS" starttime="20240101 12:25:29.774" endtime="20240101 12:25:29.774"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${range}</var>
+<value>${StartRange}</value>
+<value>${EndRange}</value>
+<iter>
+<var name="${range}">8774</var>
+<kw name="Input Text" library="Selenium2Library">
+<arg>locator=${ApplicationTextField}</arg>
+<arg>text=${Text}${range}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240101 12:25:29.778" level="INFO">Typing text 'AHM/AHM/8774' into text field 'css=input[id="application_number"]'.</msg>
+<status status="PASS" starttime="20240101 12:25:29.777" endtime="20240101 12:25:45.028"/>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<arg>locator=${SubmitButton}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240101 12:25:45.030" level="INFO">Clicking button 'css=button[id="certificateFormButton"]'.</msg>
+<status status="PASS" starttime="20240101 12:25:45.028" endtime="20240101 12:26:10.232"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20240101 12:26:12.237" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20240101 12:26:10.233" endtime="20240101 12:26:12.237"/>
+</kw>
+<kw name="Get Element Count" library="Selenium2Library">
+<var>${PageVisiblilityCount}</var>
+<arg>locator=${NoFileFoundPage}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20240101 12:26:17.279" level="INFO">${PageVisiblilityCount} = 0</msg>
+<status status="PASS" starttime="20240101 12:26:12.238" endtime="20240101 12:26:17.279"/>
+</kw>
+<if>
+<branch type="IF" condition="${PageVisiblilityCount}&gt;0">
+<kw name="Get Location" library="Selenium2Library">
+<var>${Location}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="NOT RUN" starttime="20240101 12:26:17.280" endtime="20240101 12:26:17.280"/>
+</kw>
+<kw name="Parse Data" library="ExtendedLibraray">
+<var>${data}</var>
+<arg>url=${Location}</arg>
+<status status="NOT RUN" starttime="20240101 12:26:17.281" endtime="20240101 12:26:17.281"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${NameList}[${range}]</var>
+<arg>${data}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20240101 12:26:17.281" endtime="20240101 12:26:17.281"/>
+</kw>
+<kw name="Go Back" library="Selenium2Library">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="NOT RUN" starttime="20240101 12:26:17.281" endtime="20240101 12:26:17.281"/>
+</kw>
+<status status="NOT RUN" starttime="20240101 12:26:17.280" endtime="20240101 12:26:17.281"/>
+</branch>
+<status status="PASS" starttime="20240101 12:26:17.280" endtime="20240101 12:26:17.281"/>
+</if>
+<kw name="Get Text From Clipboard" library="ExtendedLibraray">
+<var>${value}</var>
+<msg timestamp="20240101 12:26:19.137" level="INFO">${value} = </msg>
+<status status="PASS" starttime="20240101 12:26:17.282" endtime="20240101 12:26:19.137"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${NameList2}[${range}]</var>
+<arg>${value}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20240101 12:26:19.138" level="INFO">${NameList2}[${range}] = </msg>
+<status status="PASS" starttime="20240101 12:26:19.138" endtime="20240101 12:26:19.138"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${condition}</var>
+<arg>"'DIMPLE' in '${value}'"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20240101 12:26:19.139" level="INFO">${condition} = 'DIMPLE' in ''</msg>
+<status status="PASS" starttime="20240101 12:26:19.139" endtime="20240101 12:26:19.139"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${condition}</arg>
+<arg>Click Save Button</arg>
+<arg>ELSE</arg>
+<arg>Close Dialog Box</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Close Dialog Box" library="ExtendedLibraray">
+<status status="PASS" starttime="20240101 12:26:19.140" endtime="20240101 12:26:21.275"/>
+</kw>
+<status status="PASS" starttime="20240101 12:26:19.139" endtime="20240101 12:26:21.275"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${NameList2}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20240101 12:26:21.276" level="INFO">{8774: ''}</msg>
+<status status="PASS" starttime="20240101 12:26:21.275" endtime="20240101 12:26:21.276"/>
+</kw>
+<status status="PASS" starttime="20240101 12:25:29.775" endtime="20240101 12:26:21.276"/>
+</iter>
+<iter>
+<var name="${range}">8775</var>
+<kw name="Input Text" library="Selenium2Library">
+<arg>locator=${ApplicationTextField}</arg>
+<arg>text=${Text}${range}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20240101 12:26:21.277" level="INFO">Typing text 'AHM/AHM/8775' into text field 'css=input[id="application_number"]'.</msg>
+<status status="PASS" starttime="20240101 12:26:21.276" endtime="20240101 12:26:36.535"/>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<arg>locator=${SubmitButton}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20240101 12:26:36.537" level="INFO">Clicking button 'css=button[id="certificateFormButton"]'.</msg>
+<msg timestamp="20240101 12:26:46.592" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=119.0.6045.200)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7ACD982B2+55298]
+	(No symbol) [0x00007FF7ACD05E02]
+	(No symbol) [0x00007FF7ACBC05AB]
+	(No symbol) [0x00007FF7ACBA0038]
+	(No symbol) [0x00007FF7ACC26BC7]
+	(No symbol) [0x00007FF7ACC3A15F]
+	(No symbol) [0x00007FF7ACC21E83]
+	(No symbol) [0x00007FF7ACBF670A]
+	(No symbol) [0x00007FF7ACBF7964]
+	GetHandleVerifier [0x00007FF7AD110AAB+3694587]
+	GetHandleVerifier [0x00007FF7AD16728E+4048862]
+	GetHandleVerifier [0x00007FF7AD15F173+4015811]
+	GetHandleVerifier [0x00007FF7ACE347D6+695590]
+	(No symbol) [0x00007FF7ACD10CE8]
+	(No symbol) [0x00007FF7ACD0CF34]
+	(No symbol) [0x00007FF7ACD0D062]
+	(No symbol) [0x00007FF7ACCFD3A3]
+	BaseThreadInitThunk [0x00007FFD0910257D+29]
+	RtlUserThreadStart [0x00007FFD0A32AA58+40]
+</msg>
+<msg timestamp="20240101 12:26:46.600" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=119.0.6045.200)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7ACD982B2+55298]
+	(No symbol) [0x00007FF7ACD05E02]
+	(No symbol) [0x00007FF7ACBC05AB]
+	(No symbol) [0x00007FF7ACBA0038]
+	(No symbol) [0x00007FF7ACC26BC7]
+	(No symbol) [0x00007FF7ACC3A15F]
+	(No symbol) [0x00007FF7ACC21E83]
+	(No symbol) [0x00007FF7ACBF670A]
+	(No symbol) [0x00007FF7ACBF7964]
+	GetHandleVerifier [0x00007FF7AD110AAB+3694587]
+	GetHandleVerifier [0x00007FF7AD16728E+4048862]
+	GetHandleVerifier [0x00007FF7AD15F173+4015811]
+	GetHandleVerifier [0x00007FF7ACE347D6+695590]
+	(No symbol) [0x00007FF7ACD10CE8]
+	(No symbol) [0x00007FF7ACD0CF34]
+	(No symbol) [0x00007FF7ACD0D062]
+	(No symbol) [0x00007FF7ACCFD3A3]
+	BaseThreadInitThunk [0x00007FFD0910257D+29]
+	RtlUserThreadStart [0x00007FFD0A32AA58+40]
+</msg>
+<status status="FAIL" starttime="20240101 12:26:36.535" endtime="20240101 12:26:46.820"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" starttime="20240101 12:26:46.820" endtime="20240101 12:26:46.820"/>
+</kw>
+<kw name="Get Element Count" library="Selenium2Library">
+<var>${PageVisiblilityCount}</var>
+<arg>locator=${NoFileFoundPage}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<status status="NOT RUN" starttime="20240101 12:26:46.820" endtime="20240101 12:26:46.820"/>
+</kw>
+<if>
+<branch type="IF" condition="${PageVisiblilityCount}&gt;0">
+<kw name="Get Location" library="Selenium2Library">
+<var>${Location}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="NOT RUN" starttime="20240101 12:26:46.821" endtime="20240101 12:26:46.821"/>
+</kw>
+<kw name="Parse Data" library="ExtendedLibraray">
+<var>${data}</var>
+<arg>url=${Location}</arg>
+<status status="NOT RUN" starttime="20240101 12:26:46.821" endtime="20240101 12:26:46.821"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${NameList}[${range}]</var>
+<arg>${data}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20240101 12:26:46.821" endtime="20240101 12:26:46.821"/>
+</kw>
+<kw name="Go Back" library="Selenium2Library">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="NOT RUN" starttime="20240101 12:26:46.822" endtime="20240101 12:26:46.822"/>
+</kw>
+<status status="NOT RUN" starttime="20240101 12:26:46.821" endtime="20240101 12:26:46.822"/>
+</branch>
+<status status="NOT RUN" starttime="20240101 12:26:46.821" endtime="20240101 12:26:46.822"/>
+</if>
+<kw name="Get Text From Clipboard" library="ExtendedLibraray">
+<var>${value}</var>
+<status status="NOT RUN" starttime="20240101 12:26:46.822" endtime="20240101 12:26:46.822"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${NameList2}[${range}]</var>
+<arg>${value}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="NOT RUN" starttime="20240101 12:26:46.823" endtime="20240101 12:26:46.823"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<var>${condition}</var>
+<arg>"'DIMPLE' in '${value}'"</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" starttime="20240101 12:26:46.823" endtime="20240101 12:26:46.823"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${condition}</arg>
+<arg>Click Save Button</arg>
+<arg>ELSE</arg>
+<arg>Close Dialog Box</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" starttime="20240101 12:26:46.823" endtime="20240101 12:26:46.823"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${NameList2}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20240101 12:26:46.824" endtime="20240101 12:26:46.824"/>
+</kw>
+<status status="FAIL" starttime="20240101 12:26:21.276" endtime="20240101 12:26:46.824"/>
+</iter>
+<status status="FAIL" starttime="20240101 12:25:29.775" endtime="20240101 12:26:46.824"/>
+</for>
+<kw name="Log" library="BuiltIn">
+<arg>${NameList}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" starttime="20240101 12:26:46.825" endtime="20240101 12:26:46.825"/>
+</kw>
+<tag>E2E-128</tag>
+<tag>E2E-900</tag>
+<status status="FAIL" starttime="20240101 12:25:25.050" endtime="20240101 12:26:46.826">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=119.0.6045.200)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7ACD982B2+55298]
+	(No symbol) [0x00007FF7ACD05E02]
+	(No symbol) [0x00007FF7ACBC05AB]
+	(No symbol) [0x00007FF7ACBA0038]
+	(No symbol) [0x00007FF7ACC26BC7]
+	(No symbol) [0x00007FF7ACC3A15F]
+	(No symbol) [0x00007FF7ACC21E83]
+	(No symbol) [0x00007FF7ACBF670A]
+	(No symbol) [0x00007FF7ACBF7964]
+	GetHandleVerifier [0x00007FF7AD110AAB+3694587]
+	GetHandleVerifier [0x00007FF7AD16728E+4048862]
+	GetHandleVerifier [0x00007FF7AD15F173+4015811]
+	GetHandleVerifier [0x00007FF7ACE347D6+695590]
+	(No symbol) [0x00007FF7ACD10CE8]
+	(No symbol) [0x00007FF7ACD0CF34]
+	(No symbol) [0x00007FF7ACD0D062]
+	(No symbol) [0x00007FF7ACCFD3A3]
+	BaseThreadInitThunk [0x00007FFD0910257D+29]
+	RtlUserThreadStart [0x00007FFD0A32AA58+40]
+</status>
+</test>
+<test id="s1-t2" name="Testing tags" line="43">
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<arg>value=1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20240101 12:26:46.833" endtime="20240101 12:26:46.836"/>
+</kw>
+<tag>E2E-500</tag>
+<status status="PASS" starttime="20240101 12:26:46.832" endtime="20240101 12:26:46.840"/>
+</test>
+<status status="FAIL" starttime="20240101 12:25:24.662" endtime="20240101 12:26:46.844"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">E2E-128</stat>
+<stat pass="1" fail="0" skip="0">E2E-500</stat>
+<stat pass="0" fail="1" skip="0">E2E-900</stat>
+</tag>
+<suite>
+<stat pass="1" fail="1" skip="0" id="s1" name="Yog">Yog</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20240101 12:26:46.592" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=119.0.6045.200)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7ACD982B2+55298]
+	(No symbol) [0x00007FF7ACD05E02]
+	(No symbol) [0x00007FF7ACBC05AB]
+	(No symbol) [0x00007FF7ACBA0038]
+	(No symbol) [0x00007FF7ACC26BC7]
+	(No symbol) [0x00007FF7ACC3A15F]
+	(No symbol) [0x00007FF7ACC21E83]
+	(No symbol) [0x00007FF7ACBF670A]
+	(No symbol) [0x00007FF7ACBF7964]
+	GetHandleVerifier [0x00007FF7AD110AAB+3694587]
+	GetHandleVerifier [0x00007FF7AD16728E+4048862]
+	GetHandleVerifier [0x00007FF7AD15F173+4015811]
+	GetHandleVerifier [0x00007FF7ACE347D6+695590]
+	(No symbol) [0x00007FF7ACD10CE8]
+	(No symbol) [0x00007FF7ACD0CF34]
+	(No symbol) [0x00007FF7ACD0D062]
+	(No symbol) [0x00007FF7ACCFD3A3]
+	BaseThreadInitThunk [0x00007FFD0910257D+29]
+	RtlUserThreadStart [0x00007FFD0A32AA58+40]
+</msg>
+</errors>
+</robot>

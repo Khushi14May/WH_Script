@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot>
+    <suite source="YourTestSuite.robot">
+        <test id="s1-t1" name="CriticalTest1" source="YourTestSuite.robot">
+            <tags>
+                <tag>critical</tag>
+                <tag>smoke</tag>
+                <tag>regression</tag>
+            </tags>
+            <status status="PASS" critical="yes" />
+        </test>
+        <test id="s1-t2" name="NonCriticalTest1" source="YourTestSuite.robot">
+            <tags>
+                <tag>non-critical</tag>
+                <tag>regression</tag>
+            </tags>
+            <status status="PASS" critical="no" />
+        </test>
+        <test id="s1-t3" name="BugTest1" source="YourTestSuite.robot">
+            <tags>
+                <tag>bug</tag>
+                <tag>regression</tag>
+            </tags>
+            <status status="FAIL" critical="yes" />
+        </test>
+        <test id="s1-t4" name="NonCriticalTest2" source="YourTestSuite.robot">
+            <tags>
+                <tag>bug</tag>
+                <tag>regression</tag>
+            </tags>
+            <status status="FAIL" critical="no" />
+        </test>
+        <status status="FAIL" starttime="20240101 12:10:21.067" endtime="20240101 12:10:21.306"/>
+    </suite>
+    <statistics>
+        <total>
+            <stat pass="1" fail="1" />
+        </total>
+    </statistics>
+</robot>
