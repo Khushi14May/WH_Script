@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <robot>
-    <suite source="YourTestSuite.robot">
+    <s source="YourTestSuite.robot">
         <test id="s1-t1" name="CriticalTest1" source="YourTestSuite.robot">
             <tags>
                 <tag>critical</tag>

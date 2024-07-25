@@ -297,7 +297,7 @@ Stacktrace:
 <doc>Sets the delay that is waited after each Selenium command.</doc>
 <status status="PASS" starttime="20240101 12:26:46.833" endtime="20240101 12:26:46.836"/>
 </kw>
-<tag>E2E-500</tag>
+<tags><tag>E2E-500</tag></tags>
 <status status="PASS" starttime="20240101 12:26:46.832" endtime="20240101 12:26:46.840"/>
 </test>
 <status status="FAIL" starttime="20240101 12:25:24.662" endtime="20240101 12:26:46.844"/>
